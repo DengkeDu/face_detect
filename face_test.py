@@ -1,8 +1,8 @@
 import numpy as np
 import cv2
 
-face_cascade = cv2.CascadeClassifier('/home/wrsadmin/opencv/opencv-3.4.0/data/haarcascades/haarcascade_frontalface_default.xml')
-eye_cascade = cv2.CascadeClassifier('/home/wrsadmin/opencv/opencv-3.4.0/data/haarcascades/haarcascade_eye.xml')
+face_cascade = cv2.CascadeClassifier('/home/wrsadmin/workdir/gst/face_detect/haarcascade_frontalface_default.xml')
+eye_cascade = cv2.CascadeClassifier('/home/wrsadmin/workdir/gst/face_detect/haarcascade_eye.xml')
 
 cap = cv2.VideoCapture("rtspsrc location=rtsp://127.0.0.1:8554/test latency=0 ! rtph264depay ! decodebin ! videoconvert ! appsink")
 
