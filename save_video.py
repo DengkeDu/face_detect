@@ -9,6 +9,7 @@ face_cascade = cv2.CascadeClassifier('/home/wrsadmin/workdir/oopencv/face_detect
 cap = cv2.VideoCapture(0)
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
 out = cv2.VideoWriter('output.avi',fourcc, 20.0, (640,480))
+font = cv2.FONT_HERSHEY_SIMPLEX
 
 while True:
     ret, img = cap.read()
@@ -16,6 +17,7 @@ while True:
 
     faces = face_cascade.detectMultiScale(gray, 1.1, 5)
     for (x,y,w,h) in faces:
+        cv2.putText(img,'dudengke',(x,y-10), font, 1,(255,0,0),2,cv2.LINE_AA)
         cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = img[y:y+h, x:x+w]
